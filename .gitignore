@@ -1,0 +1,17 @@
+# Swift / Xcode build artifacts
+.build/
+.swiftpm/
+*.xcodeproj
+*.xcworkspace
+xcuserdata/
+DerivedData/
+.DS_Store
+
+# Resolved package versions (regenerable)
+Package.resolved
+
+# Build size limits enforced by upstream pre-commit hooks
+*.tgz
+*.gguf
+*.safetensors
+*.bin
