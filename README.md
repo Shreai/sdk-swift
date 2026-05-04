@@ -21,6 +21,25 @@ ShreAI.shared.track(
 )
 ```
 
+**Objective-C** (since v2.1.0):
+
+```objc
+#import <ShreAI/ShreAI-Swift.h>
+
+[ShreAIObjC startWithEndpoint:@"https://apiauth.shre.ai"
+               eventsEndpoint:@"https://events.shre.ai"
+                     tenantId:@"merchant_123"
+                          app:@"rapid_pos"
+            completionHandler:^(NSError *error) {
+                if (error) NSLog(@"ShreAI init failed: %@", error);
+            }];
+
+[ShreAIObjC trackName:@"price_updated"
+           entityType:@"item"
+             entityId:@"UPC_012345678905"
+             metadata:@{@"oldValue": @10.49, @"newValue": @10.99}];
+```
+
 ## Install
 
 ### Swift Package Manager (recommended)
