@@ -23,8 +23,10 @@ ShreAI.shared.track(
 
 **Objective-C** (since v2.1.0):
 
+> **Import the SDK as a Clang module: `@import ShreAI;` — not `#import <ShreAI/ShreAI-Swift.h>`.** The bracket-header form only exists for binary `.framework` distributions. Swift Package Manager publishes a Clang module that Obj-C consumers must import via `@import`. If your build fails with `'ShreAI/ShreAI-Swift.h' file not found`, this is why — change one line and rebuild. Your target must have `CLANG_ENABLE_MODULES = YES` (Xcode default since 7).
+
 ```objc
-#import <ShreAI/ShreAI-Swift.h>
+@import ShreAI;
 
 [ShreAIObjC startWithEndpoint:@"https://apiauth.shre.ai"
                eventsEndpoint:@"https://events.shre.ai"
